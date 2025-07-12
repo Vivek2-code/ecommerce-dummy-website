@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dev2DeskKart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f1f3f6;
+        }
+
+        .product:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .flip-header {
+            background-color: #2874f0;
+        }
+
+        .flip-btn {
+            background-color: #fb641b;
+        }
+
+        .flip-btn:hover {
+            background-color: #d75d15;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="flip-header text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <h1 class="text-2xl font-bold">Dev2DeskKart</h1>
+                <span class="text-xs italic text-yellow-200">Explore Plus+</span>
+            </div>
+            <div class="flex-grow px-4">
+                <input type="text" placeholder="Search for products, brands and more"
+                    class="w-full px-4 py-2 rounded bg-white text-black focus:outline-none">
+            </div>
+            <div class="flex items-center space-x-4 text-sm">
+                <a href="#" class="hover:underline">Login</a>
+                <a href="#" class="hover:underline">Become a Seller</a>
+                <a href="#" class="hover:underline">More ▾</a>
+                <a href="#" class="hover:underline">Cart 🛒</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Top Banner -->
+    <section class="bg-white py-4">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 sm:grid-cols-6 gap-4 text-center">
+            <div><img src="https://source.unsplash.com/100x100/?mobile" class="mx-auto">
+                <p>Mobiles</p>
+            </div>
+            <div><img src="https://source.unsplash.com/100x100/?tv" class="mx-auto">
+                <p>TVs</p>
+            </div>
+            <div><img src="https://source.unsplash.com/100x100/?fashion" class="mx-auto">
+                <p>Fashion</p>
+            </div>
+            <div><img src="https://source.unsplash.com/100x100/?furniture" class="mx-auto">
+                <p>Furniture</p>
+            </div>
+            <div><img src="https://source.unsplash.com/100x100/?grocery" class="mx-auto">
+                <p>Grocery</p>
+            </div>
+            <div><img src="https://source.unsplash.com/100x100/?toys" class="mx-auto">
+                <p>Kids</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Carousel -->
+    <section class="bg-white py-6">
+        <div class="max-w-7xl mx-auto px-4">
+            <img src="https://source.unsplash.com/1200x300/?shopping,ecommerce,sale" class="w-full rounded">
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="py-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <h3 class="text-2xl font-bold mb-6">Top Deals of the Day</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Generate 40 products -->
+                <script>
+                    const categories = ['mobile', 'laptop', 'tv', 'fridge', 'washingmachine', 'sofa', 'tshirt', 'shoes', 'watch', 'makeup'];
+                    for (let i = 0; i < 40; i++) {
+                        const cat = categories[i % categories.length];
+                        const price = Math.floor(Math.random() * 30000) + 1000;
+                        const mrp = price + Math.floor(Math.random() * 5000);
+                        document.write(`
+              <div class='bg-white p-4 rounded shadow product'>
+                <img src='https://source.unsplash.com/300x300/?${cat}&sig=${i}' class='w-full h-48 object-cover rounded'>
+                <h4 class='mt-3 font-semibold capitalize'>${cat} Product ${i + 1}</h4>
+                <p class='text-gray-600 text-sm'>₹${price} <span class='line-through ml-2 text-xs'>₹${mrp}</span></p>
+                <button class='mt-2 w-full flip-btn text-white py-2 rounded'>Add to Cart</button>
+              </div>
+            `);
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-10 text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-4 gap-6 text-gray-700">
+            <div>
+                <h5 class="font-bold mb-2">About</h5>
+                <ul>
+                    <li>Contact Us</li>
+                    <li>About Us</li>
+                    <li>Careers</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-2">Help</h5>
+                <ul>
+                    <li>Payments</li>
+                    <li>Shipping</li>
+                    <li>Cancellation & Returns</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-2">Policy</h5>
+                <ul>
+                    <li>Return Policy</li>
+                    <li>Terms of Use</li>
+                    <li>Privacy</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold mb-2">Contact</h5>
+                <p>📍 Patna, Bihar</p>
+                <p>📞 8890043675</p>
+                <p>📧 support@dev2desk.in</p>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-400 py-4 border-t">© 2025 Dev2DeskKart. All rights reserved.</div>
+    </footer>
+
+</body>
+
+</html>
